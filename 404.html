@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flower Emoji URL Animation</title>
+</head>
+<body>
+  <script>
+    // Array of flower emojis to cycle through
+    const flowers = ['🌸', '🌼', '🌺', '🌻', '🌷'];
+    let index = 0;
+
+    function step() {
+      // Update the path to the current flower emoji
+      history.replaceState(null, '', '/' + flowers[index]);
+      // Advance and wrap around
+      index = (index + 1) % flowers.length;
+    }
+
+    // Kick off the animation
+    step();
+    setInterval(step, 210);
+  </script>
+</body>
+</html>
